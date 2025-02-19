@@ -14,58 +14,77 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <!-- Header -->
     <header>
       <nav>
         <div class="logo">
+          <!-- This is the main brand/logo in the header -->
           <img class="logo-img" src="assets/ascendtrading_logo.jpg" alt="Ascend Trading Logo" />
         </div>
-        <ul>
-          <li><a href="#current">Current Project</a></li>
-          <li><a href="#past">Past Projects</a></li>
-        </ul>
       </nav>
-      <div class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <h1>Welcome to Ascend Trading</h1>
-          <p>Launching crypto projects every 2 weeks</p>
-        </div>
-      </div>
     </header>
 
-    <section id="current" class="current-project section">
+    <!-- Hero with background logo -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Welcome to Ascend Trading</h1>
+        <p>Launching crypto projects every 2 weeks</p>
+      </div>
+    </section>
+
+    <!-- Current Project Section -->
+    <section class="section current-project">
       <h2>Current Project</h2>
       <div class="project-card">
         <img src="assets/current-project.jpg" alt="Current Project Image" />
         <div class="project-info">
           <h3>Project Name</h3>
-          <p>Short description of the current project goes here. It explains the idea in a concise way.</p>
-          <a href="#" class="btn">Learn More</a>
+          <p>
+            Short description of the current project goes here. It explains the idea in
+            a concise way.
+          </p>
         </div>
+      </div>
+      <!-- Button that scrolls to the Past Projects section -->
+      <div class="center-btn">
+        <a href="#past" class="btn">View Past Projects</a>
       </div>
     </section>
 
-    <section id="past" class="past-projects section">
+    <!-- Past Projects Section -->
+    <section id="past" class="section past-projects">
       <h2>Past Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
-          <img src="assets/project1.jpg" alt="Project One" />
+        <!-- Example Card #1 -->
+        <div class="project-card past-project-card">
+          <img src="assets/past-project1.jpg" alt="Project One" />
           <div class="project-info">
             <h3>Project One</h3>
-            <p>Description of project one.</p>
+            <p>Description of project one. This can be a short summary or highlight.</p>
+            <div class="metrics">
+              <p><strong>Total Profit:</strong> +135%</p>
+              <p><strong>Final Market Cap:</strong> $2.3M</p>
+            </div>
           </div>
         </div>
-        <div class="project-card">
-          <img src="assets/project2.jpg" alt="Project Two" />
+        <!-- Example Card #2 -->
+        <div class="project-card past-project-card">
+          <img src="assets/past-project2.jpg" alt="Project Two" />
           <div class="project-info">
             <h3>Project Two</h3>
-            <p>Description of project two.</p>
+            <p>Description of project two. This can be a short summary or highlight.</p>
+            <div class="metrics">
+              <p><strong>Total Profit:</strong> +80%</p>
+              <p><strong>Final Market Cap:</strong> $950K</p>
+            </div>
           </div>
         </div>
-        <!-- Additional project cards can be added here -->
+        <!-- Add more cards as needed -->
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>
       <p>&copy; 2025 Ascend Trading. All rights reserved.</p>
     </footer>
