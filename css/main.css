@@ -1,166 +1,107 @@
-/* CSS Variables for easy theming */
-:root {
-  --bg-color: #111;
-  --nav-bg: #1a1a1a;
-  --section-bg: #151515;
-  --text-color: #e0e0e0;
-  /* A cooler accent color instead of brownish orange */
-  --accent-color: #1abc9c;
-  --transition-speed: 0.3s;
-  --font-family: 'Inter', sans-serif;
-}
-
-/* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+    background-color: #0F0F1F;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Smooth Fade-in Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0F0F1F;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Animated Gradient Keyframes */
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.loader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #7C3AED;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-/* Header & Navigation */
-header nav {
-  display: flex;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: var(--nav-bg);
-  position: relative;
-  z-index: 2;
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  /* 
-    1) An animated gradient
-    2) The Ascend Trading logo behind the gradient (with partial size)
-  */
-  background:
-    linear-gradient(135deg, #232526, #414345) 0 0 / 400% 400%,
-    url('../assets/ascendtrading_logo.jpg') center/25% no-repeat;
-  animation: gradientBG 15s ease infinite;
-  overflow: hidden;
+/* Rest of your existing CSS from previous version */
+
+/* Add these new styles */
+.nav-links a.active {
+    color: #7C3AED;
+    position: relative;
 }
 
-/* Subtle overlay to dim the background if desired */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #7C3AED;
+    animation: underline 0.3s ease;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  animation: fadeIn 1.5s ease forwards;
+@keyframes underline {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.social-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
+.social-icon {
+    font-size: 1.5rem;
+    color: #A0A0C0;
+    transition: all 0.3s ease;
 }
 
-/* Section Styling */
-.section {
-  padding: 60px 40px;
-  background-color: var(--section-bg);
-  animation: fadeIn 1s ease forwards;
+.social-icon:hover {
+    color: #7C3AED;
+    transform: translateY(-3px);
 }
 
-/* Current & Past Project Cards */
 .project-card {
-  display: flex;
-  background-color: var(--nav-bg);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    position: relative;
+    overflow: hidden;
 }
 
-.project-card img {
-  width: 40%;
-  object-fit: cover;
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(124, 58, 237, 0.1),
+        transparent
+    );
+    transition: 0.5s;
 }
 
-.project-info {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.project-info h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
-}
-
-/* Past Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-/* Additional styling for past project cards */
-.past-project-card .metrics {
-  margin-top: 10px;
-  line-height: 1.4;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: var(--nav-bg);
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-  margin-top: 40px;
+.project-card:hover::before {
+    left: 100%;
 }
