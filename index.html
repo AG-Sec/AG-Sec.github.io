@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ascend Trading</title>
@@ -17,83 +18,103 @@
     <!-- Header -->
     <header>
       <nav>
-        <img src="assets/ascendtrading_logo.jpg" alt="Ascend Trading Logo" class="nav-logo" />
+        <!-- <img src="assets/ascendtrading_logo.jpg" alt="Ascend Trading Logo" class="nav-logo" /> -->
       </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Logo -->
     <section class="hero" data-aos="fade-up">
+      <div class="hero-logo-background">
+        <img src="assets/ascendtrading_logo.jpg" alt="Ascend Trading" />
+      </div>
       <div class="hero-overlay"></div>
-      <div class="hero-content">
+      <div class="hero-content container">
         <h1>Welcome to Ascend Trading</h1>
-        <p class="subtitle">Launching crypto projects every 2 weeks</p>
+        <p class="subtitle">Pioneering Short-Term Crypto Ventures</p>
         <div class="launch-counter">
-          <span>Next launch in:</span>
-          <div class="counter">14 days</div>
+          <div class="counter-item">
+            <span class="number">14</span>
+            <span class="label">Days to Launch</span>
+          </div>
+          <div class="counter-item">
+            <span class="number">$2.1M</span>
+            <span class="label">Current Allocation</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Current Project Section -->
     <section class="section current-project">
-      <h2 data-aos="fade-up">Current Project</h2>
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/current-project.jpg" alt="Current Project Image" />
-        <div class="project-info">
-          <h3>Project Phoenix</h3>
-          <p>Next-generation DeFi protocol with enhanced security and yield optimization.</p>
-          <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Target ROI</span>
-              <span class="meta-value">+200%</span>
+      <div class="container">
+        <h2 data-aos="fade-up">Active Opportunity</h2>
+        <div class="project-card featured-project" data-aos="fade-up">
+          <div class="project-header">
+            <h3>Project Phoenix</h3>
+            <span class="project-status live">Live</span>
+          </div>
+          <div class="project-content">
+            <div class="project-metrics">
+              <div class="metric">
+                <i class="fas fa-chart-line"></i>
+                <div class="metric-info">
+                  <span class="value">+210%</span>
+                  <span class="label">Target ROI</span>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-clock"></i>
+                <div class="metric-info">
+                  <span class="value">48H</span>
+                  <span class="label">Entry Window</span>
+                </div>
+              </div>
             </div>
-            <div class="meta-item">
-              <span class="meta-label">Launch Date</span>
-              <span class="meta-value">2024-08-01</span>
+            <p class="project-description">
+              Next-gen DeFi protocol with AI-powered liquidity optimization and 
+              built-in MEV protection systems.
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+              <span class="progress-text">75% Allocation Filled</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Past Projects Section -->
     <section class="section past-projects">
-      <h2 data-aos="fade-up">Past Performance</h2>
-      <div class="projects-grid">
-        <div class="project-card past-project-card" data-aos="fade-up">
-          <img src="assets/past-project1.jpg" alt="Project One" />
-          <div class="project-info">
-            <h3>Project Alpha</h3>
-            <p>Pioneering liquidity pool with dynamic fee structure</p>
-            <div class="metrics">
-              <div class="metric">
-                <span class="metric-label">Total Profit</span>
-                <span class="metric-value success">+135%</span>
+      <div class="container">
+        <h2 data-aos="fade-up">Historical Performance</h2>
+        <div class="projects-grid">
+          <div class="project-card past-project" data-aos="fade-up">
+            <div class="project-header">
+              <h3>Project Nexus</h3>
+              <span class="project-status completed">Completed</span>
+            </div>
+            <div class="project-content">
+              <div class="performance-metrics">
+                <div class="metric">
+                  <span class="value success">+148%</span>
+                  <span class="label">Total Return</span>
+                </div>
+                <div class="metric">
+                  <span class="value">$2.8M</span>
+                  <span class="label">Peak Valuation</span>
+                </div>
               </div>
-              <div class="metric">
-                <span class="metric-label">Market Cap</span>
-                <span class="metric-value">$2.3M</span>
-              </div>
+              <p class="project-description">
+                Cross-chain DEX aggregator with zero-price-impact swaps
+              </p>
+              <ul class="project-stats">
+                <li><span>Hold Period:</span> 12 Days</li>
+                <li><span>ROI/Day:</span> +12.3%</li>
+                <li><span>Volatility:</span> Medium</li>
+              </ul>
             </div>
           </div>
-        </div>
-
-        <div class="project-card past-project-card" data-aos="fade-up">
-          <img src="assets/past-project2.jpg" alt="Project Two" />
-          <div class="project-info">
-            <h3>Project Nexus</h3>
-            <p>Cross-chain DEX aggregator with MEV protection</p>
-            <div class="metrics">
-              <div class="metric">
-                <span class="metric-label">Total Profit</span>
-                <span class="metric-value success">+80%</span>
-              </div>
-              <div class="metric">
-                <span class="metric-label">Market Cap</span>
-                <span class="metric-value">$950K</span>
-              </div>
-            </div>
-          </div>
+          <!-- Add more past projects following same structure -->
         </div>
       </div>
     </section>
