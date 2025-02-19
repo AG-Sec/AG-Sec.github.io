@@ -1,99 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AG-SEC | Application Security Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    <div class="loader"></div>
-    
-    <nav>
-        <div class="container nav-content">
-            <a href="#" class="logo">AG-SEC</a>
-            <div class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ascend Trading</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <!-- Header is intentionally empty (no logo, no links) -->
+      </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
-            <h1>Application Security Engineer</h1>
-            <p>Securing modern applications through innovative security solutions and best practices.</p>
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Optional overlay to darken the background gradient/logo -->
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Welcome to Ascend Trading</h1>
+        <p>Launching crypto projects every 2 weeks</p>
+      </div>
     </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-            <div class="project-grid">
-                <!-- Project cards with AOS animations -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Secure Code Framework</h3>
-                    <p>A framework for implementing security best practices in SDLC.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-                <!-- Add other project cards similarly -->
-            </div>
+    <!-- Current Project Section -->
+    <section class="section current-project">
+      <h2>Current Project</h2>
+      <div class="project-card">
+        <img src="assets/current-project.jpg" alt="Current Project Image" />
+        <div class="project-info">
+          <h3>Project Name</h3>
+          <p>
+            Short description of the current project goes here. It explains the idea in
+            a concise way.
+          </p>
         </div>
+      </div>
     </section>
 
+    <!-- Past Projects Section -->
+    <section class="section past-projects">
+      <h2>Past Projects</h2>
+      <div class="projects-grid">
+        <!-- Example Card #1 -->
+        <div class="project-card past-project-card">
+          <img src="assets/past-project1.jpg" alt="Project One" />
+          <div class="project-info">
+            <h3>Project One</h3>
+            <p>Description of project one. This can be a short summary or highlight.</p>
+            <div class="metrics">
+              <p><strong>Total Profit:</strong> +135%</p>
+              <p><strong>Final Market Cap:</strong> $2.3M</p>
+            </div>
+          </div>
+        </div>
+        <!-- Example Card #2 -->
+        <div class="project-card past-project-card">
+          <img src="assets/past-project2.jpg" alt="Project Two" />
+          <div class="project-info">
+            <h3>Project Two</h3>
+            <p>Description of project two. This can be a short summary or highlight.</p>
+            <div class="metrics">
+              <p><strong>Total Profit:</strong> +80%</p>
+              <p><strong>Final Market Cap:</strong> $950K</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://t.me/yourusername" target="_blank" class="social-icon">
-                    <i class="fab fa-telegram"></i>
-                </a>
-            </div>
-            <p>&copy; 2024 AG-SEC. All rights reserved.</p>
-        </div>
+      <p>&copy; 2025 Ascend Trading. All rights reserved.</p>
     </footer>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            once: true,
-            offset: 120,
-            duration: 800,
-        });
-
-        // Active nav link scroll detection
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Loader
-        window.addEventListener('load', () => {
-            const loader = document.querySelector('.loader');
-            loader.style.display = 'none';
-        });
-    </script>
-    <script src="https://kit.fontawesome.com/5cfb2c0b60.js" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
