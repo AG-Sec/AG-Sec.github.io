@@ -1,107 +1,169 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+:root {
+  --primary: #7C3AED;
+  --dark: #0F0F1F;
+  --dark-2: #1A1A2F;
+  --text: #E0E0FF;
+  --text-muted: #A0A0C0;
 }
 
-body {
-    background-color: #0F0F1F;
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
+/* Loader */
 .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0F0F1F;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .loader::after {
-    content: "";
-    width: 50px;
-    height: 50px;
-    border: 5px solid #7C3AED;
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* Rest of your existing CSS from previous version */
-
-/* Add these new styles */
-.nav-links a.active {
-    color: #7C3AED;
-    position: relative;
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--dark);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #7C3AED;
-    animation: underline 0.3s ease;
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--dark-2), var(--dark));
 }
 
-@keyframes underline {
-    from { width: 0; }
-    to { width: 100%; }
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 }
 
-.social-links {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.social-icon {
-    font-size: 1.5rem;
-    color: #A0A0C0;
-    transition: all 0.3s ease;
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--primary), #6366F1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.social-icon:hover {
-    color: #7C3AED;
-    transform: translateY(-3px);
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
 }
 
+.launch-counter {
+  background: var(--dark-2);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* Project Cards */
 .project-card {
-    position: relative;
-    overflow: hidden;
+  background: var(--dark-2);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(124, 58, 237, 0.1),
-        transparent
-    );
-    transition: 0.5s;
+.project-card:hover {
+  transform: translateY(-5px);
 }
 
-.project-card:hover::before {
-    left: 100%;
+.project-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 2rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.metric {
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.success {
+  color: #10B981;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-2);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
